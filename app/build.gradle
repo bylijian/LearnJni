@@ -10,9 +10,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //和普通的Android 工程不同，为了支持编译C,C++ 代码，需要 加入 externalNativeBuild
         externalNativeBuild {
             cmake {
-                cppFlags "-std=c++11 -frtti -fexceptions"
+                cppFlags "-std=c++11 -frtti -fexceptions" //指定编译的c++ 使用的是 c++11，后面的是编译参数
             }
         }
     }
@@ -24,7 +25,7 @@ android {
     }
     externalNativeBuild {
         cmake {
-            path "CMakeLists.txt"
+            path "CMakeLists.txt"//这个指定了Cmake使用的编译脚本CMakeLists.txt的路径，和build.gradle 同级
         }
     }
 }
