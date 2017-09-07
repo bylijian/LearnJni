@@ -24,6 +24,18 @@ add_library( # Sets the name of the library.
              # Provides a relative path to your source file(s).
              src/main/cpp/native-lib.cpp )
 
+#添加一个名字为 native-c-lib 的 SHARED library ，它最终的 文件名是 libnative-c-lib.so
+#源文件是 src/main/cpp/native-c-lib.c
+
+add_library( # Sets the name of the library.
+             native-c-lib
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             src/main/cpp/native-c-lib.c )
+
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
 # default, you only need to specify the name of the public NDK library
