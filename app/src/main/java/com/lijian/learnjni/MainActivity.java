@@ -31,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
     static {
         System.loadLibrary("native-lib");
         System.loadLibrary("native-c-lib");
+        System.loadLibrary("native-java-callback");
     }
 }
